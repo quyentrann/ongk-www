@@ -20,14 +20,17 @@ public class Experience {
     @ManyToOne
     private Candidate candidate;
 
+    @Column
+    private Role role;
     public Experience() {
     }
 
-    public Experience(String workDescription, LocalDate fromDate, LocalDate toDate, Candidate candidate) {
+    public Experience(String workDescription, LocalDate fromDate, LocalDate toDate, Candidate candidate, Role role) {
         this.workDescription = workDescription;
         this.fromDate = fromDate;
         this.toDate = toDate;
         this.candidate = candidate;
+        this.role = role;
     }
 
     public long getId() {
@@ -70,6 +73,14 @@ public class Experience {
         this.candidate = candidate;
     }
 
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
     @Override
     public String toString() {
         return "Experience{" +
@@ -77,7 +88,7 @@ public class Experience {
                 ", workDescription='" + workDescription + '\'' +
                 ", fromDate=" + fromDate +
                 ", toDate=" + toDate +
-                ", candidate=" + candidate +
+                ", role=" + role +
                 '}';
     }
 }

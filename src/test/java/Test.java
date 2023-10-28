@@ -4,6 +4,7 @@ import jakarta.persistence.EntityTransaction;
 import vn.edu.iuh.fit.connection.ConnectionDB;
 import vn.edu.iuh.fit.models.Candidate;
 import vn.edu.iuh.fit.models.Experience;
+import vn.edu.iuh.fit.models.Role;
 import vn.edu.iuh.fit.respository.CandidateRespository;
 import vn.edu.iuh.fit.respository.ExperienceRespositori;
 
@@ -21,9 +22,9 @@ public class Test {
         respository.addCandidate(candidate2);
 
         ExperienceRespositori experienceRespositori = new ExperienceRespositori();
-        Experience experience = new Experience("hggcyukk", LocalDate.of(2023, 10, 24), LocalDate.now(),respository.findOne(1) );
-        Experience experience1 = new Experience("treww", LocalDate.of(2002, 1, 31), LocalDate.now(),respository.findOne(2) );
-        Experience experience2 = new Experience("njSKWDJ", LocalDate.of(2022, 10, 25), LocalDate.now(),respository.findOne(3) );
+        Experience experience = new Experience("hggcyukk", LocalDate.of(2023, 10, 24), LocalDate.now(),respository.findOne(1), Role.ADMINISTRATION );
+        Experience experience1 = new Experience("treww", LocalDate.of(2002, 1, 31), LocalDate.now(),respository.findOne(2) ,Role.ADMINISTRATION);
+        Experience experience2 = new Experience("njSKWDJ", LocalDate.of(2022, 10, 25), LocalDate.now(),respository.findOne(3) ,Role.STAFF);
 
         experienceRespositori.addExperience(experience);
         experienceRespositori.addExperience(experience1);
